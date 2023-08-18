@@ -9,11 +9,41 @@
 // If it's before 10PM, there's 5 pieces left. At 10PM, someone eats them
 // all, so there'll be no more left :(
 fn maybe_icecream(time_of_day: u16) -> Option<u16> {
+
     // We use the 24-hour system here, so 10PM is a value of 22 and 12AM is a
     // value of 0 The Option output should gracefully handle cases where
     // time_of_day > 23.
     // TODO: Complete the function body - remember to return an Option!
-    ???
+
+
+    //basic if/else with intervals
+    /*
+    if time_of_day <22{
+        return Option::Some(5);
+    }else if time_of_day <=24{
+        return Option::Some(0);
+    }else{
+        return Option::None;
+    }
+    */
+
+
+    //range-based
+    /*
+    if (0..22).contains(&time_of_day){
+        return Option::Some(5);
+    }else if time_of_day <= 24 {
+        return Option::Some(0);
+    }
+    return Option::None;
+    */
+
+    //match + range based
+    match time_of_day{
+        0..=21 => return Option::Some(5),
+        22..=24 => return Option::Some(0),
+        _ => Option::None
+    }
 }
 
 #[cfg(test)]
@@ -33,7 +63,7 @@ mod tests {
     fn raw_value() {
         // TODO: Fix this test. How do you get at the value contained in the
         // Option?
-        let icecreams = maybe_icecream(12);
+        let icecreams = maybe_icecream(12).unwrap_or_default();
         assert_eq!(icecreams, 5);
     }
 }
