@@ -4,8 +4,6 @@
 // I AM DONE
 
 fn main() {
-    let x: i32;
-    
-    x=2;
+    let x: i32 = 10;
     println!("Number {}", x);
 }

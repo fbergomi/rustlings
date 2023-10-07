@@ -7,8 +7,8 @@ fn main() {
     call_me(13);
 }
 
-fn call_me(num:i16) {
-     for i in 0..num {
+fn call_me(num: i16) {
+    for i in 0..num {
         println!("Ring! Call number {}", i + 1);
     }
 }

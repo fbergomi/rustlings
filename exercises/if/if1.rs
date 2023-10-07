@@ -4,6 +4,11 @@
 // I AM DONE
 
 pub fn bigger(a: i32, b: i32) -> i32 {
+    if a > b {
+        return a;
+    }
+    return b;
+
     // Complete this function to return the bigger number!
     // Do not use:
     // - another function call
