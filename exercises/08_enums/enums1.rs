@@ -1,9 +1,6 @@
 // enums1.rs
 //
-// No hints this time! ;)
-
-// I AM NOT DONE
-
+// No hints this time! ;)
 #[derive(Debug)]
 enum Message {
     Quit,
