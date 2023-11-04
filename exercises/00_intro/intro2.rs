@@ -8,5 +8,5 @@
 // I AM DONE
 
 fn main() {
-    printline!("Hello there!", "Franco")
+    println!("Hello {}!", "Franco");
 }
