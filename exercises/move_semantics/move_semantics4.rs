@@ -5,10 +5,7 @@
 // the main function.
 //
 // Execute `rustlings hint move_semantics4` or use the `hint` watch subcommand
-// for a hint.
-
-// I AM NOT DONE
-
+// for a hint.
 #[test]
 fn main() {
     let vec0 = vec![22, 44, 66];
