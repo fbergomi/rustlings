@@ -29,9 +29,8 @@ fn send_tx(q: Queue, tx: mpsc::Sender<u32>) -> () {
     let qc1 = Arc::clone(&qc);
     let qc2 = Arc::clone(&qc);
 
-    let txc = Arc::new(tx);
-    let txc1 = Arc::clone(&txc);
-    let txc2 = Arc::clone(&txc);
+    let txc1 = tx.clone();
+    let txc2 = tx.clone();
 
     thread::spawn(move || {
         for val in &qc1.first_half {
@@ -64,6 +63,6 @@ fn main() {
         total_received += 1;
     }
 
-    println!("total numbers received: {}", total_received);    
+    println!("total numbers received: {}", total_received);
     assert_eq!(total_received, queue_length)
 }
